@@ -13,7 +13,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
 using System.Windows.Interop;
-using System.Windows.Media;
 
 namespace GLSOOBE
 {
@@ -26,6 +25,8 @@ namespace GLSOOBE
         {
             InitializeComponent();
             this.SourceInitialized += new EventHandler(MainWindow_SourceInitialized);
+            NavigationCommands.BrowseBack.InputGestures.Clear();
+            NavigationCommands.BrowseForward.InputGestures.Clear();
         }
 
         private void OOBEFrame_Navigated(object sender, NavigationEventArgs e)
@@ -33,7 +34,8 @@ namespace GLSOOBE
 
         }
 
-        //Force software only
+        //Force software only, DO NOT REMOVE THIS
+        //IT WILL CRASH UNDER A HDD WITHOUT THIS, I DON'T KNOW WHY
         private void MainWindow_SourceInitialized(object sender, EventArgs e)
         {
             HwndSource hwndSource = PresentationSource.FromVisual(this) as HwndSource;
@@ -50,8 +52,9 @@ namespace GLSOOBE
 
         private void Window_PreviewKeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.F10 &&
-                (Keyboard.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
+            Key actualKey = (e.Key == Key.System) ? e.SystemKey : e.Key;
+
+            if (actualKey == Key.F10 && (Keyboard.Modifiers & ModifierKeys.Shift) == ModifierKeys.Shift)
             {
                 Process.Start(
                     new ProcessStartInfo("cmd.exe")

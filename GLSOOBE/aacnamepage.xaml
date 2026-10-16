@@ -24,7 +24,7 @@
         <TextBlock x:Name="accountscreated" HorizontalAlignment="Left" Margin="20.289,169.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="205.711" FontSize="14" Height="47"><Run Text="Accounts that you have created:"/><LineBreak/><Run/></TextBlock>
         <TextBlock x:Name="statustext" HorizontalAlignment="Left" Margin="20.289,169.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFDE651F" Width="705.544" FontSize="14" Height="47" Text="statustext" Visibility="Hidden"/>
         <WindowsFormsHost x:Name="newusernameinput" HorizontalAlignment="Left" Height="29" Margin="20.289,140.5,0,0" VerticalAlignment="Top" Width="211.711">
-            <Forms:TextBox Dock="None"/>
+            <Forms:TextBox x:Name="usernametext" Dock="None"/>
         </WindowsFormsHost>
     </Grid>
 </Page>

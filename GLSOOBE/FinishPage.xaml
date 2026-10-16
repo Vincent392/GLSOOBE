@@ -20,7 +20,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBlock HorizontalAlignment="Left" Margin="20.289,34.233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36.103" Width="449.808" FontSize="24" FontWeight="Bold" Foreground="White"><Run Text="Thank you for answering the questions"/><LineBreak/><Run/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Margin="20.289,34.233,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="36.103" Width="711.909" FontSize="24" FontWeight="Bold" Foreground="White"><Run Text="Thank you for answering the questions"/><LineBreak/><Run/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Margin="20.289,96.273,0,0" TextWrapping="Wrap" Text="As Setup continues, you can personalise your computer by selecting background pictures, colors and user tiles." VerticalAlignment="Top" Foreground="White" Width="711.909" FontSize="14" Height="19"/>
         <Button Content="Finish" HorizontalAlignment="Stretch" Height="25" Margin="661.22,554.504,28.28,20.752" VerticalAlignment="Stretch" Width="110.5" Click="Button_Click" Background="#FFDDDDDD"/>
     </Grid>
