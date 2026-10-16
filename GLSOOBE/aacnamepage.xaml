@@ -23,7 +23,7 @@
         <Button x:Name="newnext" Content="Next" HorizontalAlignment="Stretch" Height="25.05" Margin="661,554.95,28.5,20" VerticalAlignment="Stretch" Width="110.5" Click="newnext_Click"/>
         <TextBlock x:Name="accountscreated" HorizontalAlignment="Left" Margin="20.289,169.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="205.711" FontSize="14" Height="47"><Run Text="Accounts that you have created:"/><LineBreak/><Run/></TextBlock>
         <TextBlock x:Name="statustext" HorizontalAlignment="Left" Margin="20.289,169.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFDE651F" Width="705.544" FontSize="14" Height="47" Text="statustext" Visibility="Hidden"/>
-        <WindowsFormsHost x:Name="newusernameinput" HorizontalAlignment="Left" Height="29" Margin="20.289,140.5,0,0" VerticalAlignment="Top" Width="211.711" ChildChanged="WindowsFormsHost_ChildChanged">
+        <WindowsFormsHost x:Name="newusernameinput" HorizontalAlignment="Left" Height="29" Margin="20.289,140.5,0,0" VerticalAlignment="Top" Width="211.711">
             <Forms:TextBox Dock="None"/>
         </WindowsFormsHost>
     </Grid>
