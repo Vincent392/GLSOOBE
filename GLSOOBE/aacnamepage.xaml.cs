@@ -30,20 +30,44 @@ namespace GLSOOBE
             NavigationService.GoBack();
         }
 
+        char[] illegalcharacters = 
+            { ' ', '{', '|', '}', '~', '[', '\\', ']', '^', '\'',
+            ':', ';', '<', '=', '>', '?', '@', '!', '"', '#',
+            '$', '%', '`', '(', ')', '+', '/', '.', ',', '*', '&', 
+            '"', '/', '\\', '[', ']', ':', '|', '<', '>', '+', 
+            '=', ';', ',', '?', '*', '%' };
+
         private void createaccount_Click(object sender, RoutedEventArgs e)
         {
+            if(string.IsNullOrEmpty(usernameinput.Text.ToString()))
+            {
+                accountscreated.Visibility = Visibility.Hidden;
+                statustext.Text = "Account name cannot be empty or consist of spaces";
+                statustext.Visibility = Visibility.Visible;
+                return;
+            }
+            if (usernameinput.Text.IndexOfAny(illegalcharacters) >= 0)
+            {
+                accountscreated.Visibility = Visibility.Hidden;
+                statustext.Text = "Account name cannot consist of spaces or the following characters:\n { | } ~ [ \\ ] ^ : ; < = > ? @ ! \" % ` ( ) + / . , * & / ;";
+                statustext.Visibility = Visibility.Visible;
+                return;
+            }
             ProcessStartInfo usercreate = new ProcessStartInfo();
             usercreate.FileName = "cmd.exe";
-            usercreate.Arguments = "/c net user " + usernameinput.Text + "/add";
+            usercreate.Arguments = "/c net user " + usernameinput.Text + " /add";
             usercreate.UseShellExecute = false;
             usercreate.CreateNoWindow = true;
             Process.Start(usercreate);
             ProcessStartInfo addadmin = new ProcessStartInfo();
             addadmin.FileName = "cmd.exe";
-            addadmin.Arguments = "/c net localgroup Administrators " + usernameinput.Text + "/add";
+            addadmin.Arguments = "/c net localgroup Administrators " + usernameinput.Text + " /add";
             addadmin.UseShellExecute = false;
             addadmin.CreateNoWindow = true;
             Process.Start(addadmin);
+            statustext.Visibility = Visibility.Hidden;
+            accountscreated.Visibility = Visibility.Visible;
+            accountscreated.Text = accountscreated.Text + "\n" + usernameinput.Text; //Programming warcrimes 101
         }
 
         private void newnext_Click(object sender, RoutedEventArgs e)

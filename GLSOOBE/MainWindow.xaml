@@ -8,7 +8,7 @@
         PreviewKeyDown="Window_PreviewKeyDown"
         Title="Out Of Box Experience" Height="600" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" WindowState="Maximized" WindowStyle="None">
     <Grid>
-        <Frame x:Name="OOBEFrame" Content="msoobe" HorizontalAlignment="Left" Height="600" VerticalAlignment="Top" Width="800" NavigationUIVisibility="Hidden" Source="/GLSOOBE;component/WelcomePage.xaml" Navigated="OOBEFrame_Navigated"/>
+        <Frame x:Name="OOBEFrame" Content="msoobe" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" NavigationUIVisibility="Hidden" Source="/GLSOOBE;component/WelcomePage.xaml" Navigated="OOBEFrame_Navigated"/>
 
     </Grid>
 </Window>

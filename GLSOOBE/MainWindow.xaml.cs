@@ -12,6 +12,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Diagnostics;
+using System.Windows.Interop;
+using System.Windows.Media;
 
 namespace GLSOOBE
 {
@@ -23,9 +25,25 @@ namespace GLSOOBE
         public MainWindow()
         {
             InitializeComponent();
+            this.SourceInitialized += new EventHandler(MainWindow_SourceInitialized);
         }
 
         private void OOBEFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+
+        }
+
+        //Force software only
+        private void MainWindow_SourceInitialized(object sender, EventArgs e)
+        {
+            HwndSource hwndSource = PresentationSource.FromVisual(this) as HwndSource;
+            if (hwndSource != null && hwndSource.CompositionTarget != null)
+            {
+                hwndSource.CompositionTarget.RenderMode = RenderMode.SoftwareOnly;
+            }
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
         }
