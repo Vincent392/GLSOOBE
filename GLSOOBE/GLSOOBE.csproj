@@ -125,5 +125,8 @@
   <ItemGroup>
     <Resource Include="slate.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="VirtualBox_Windows Longhorn Pre-Reset_17_10_2026_15_45_10.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

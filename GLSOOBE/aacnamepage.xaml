@@ -17,13 +17,13 @@
         </Grid.Background>
         <TextBlock HorizontalAlignment="Left" Margin="20.289,34.233,0,0" TextWrapping="Wrap" Text="Name the new account" VerticalAlignment="Top" Height="36.103" Width="331.99" FontSize="24" FontWeight="Bold" Foreground="White"/>
         <TextBlock HorizontalAlignment="Left" Margin="20.289,100.773,0,0" TextWrapping="Wrap" Text="The name you type will appear on the Welcome screen and the Start menu. After typing the name that you want to add, click Create Account. The name you type here will be a system administrator." VerticalAlignment="Top" Foreground="White" Width="734" FontSize="14"/>
-        <Button x:Name="createaccount" Content="Create Account" HorizontalAlignment="Left" Height="26" Margin="237,140.5,0,0" VerticalAlignment="Top" Width="133.833" Click="createaccount_Click"/>
+        <Button x:Name="createaccount" Content="Create Account" HorizontalAlignment="Left" Height="26" Margin="237,140.5,0,0" VerticalAlignment="Top" Width="133.833" Click="createaccount_Click" Background="#FFDDDDDD"/>
         <Button x:Name="backbutton" Content="Back" HorizontalAlignment="Stretch" Height="25" Margin="529.75,554.95,159.75,20.05" VerticalAlignment="Stretch" Width="110.5" Click="Button_Click"/>
         <TextBox x:Name="usernameinput" HorizontalAlignment="Left" Height="26" Margin="20.289,140.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="205.711" IsTabStop="true" d:IsHidden="True" d:IsLocked="True"/>
         <Button x:Name="newnext" Content="Next" HorizontalAlignment="Stretch" Height="25.05" Margin="661,554.95,28.5,20" VerticalAlignment="Stretch" Width="110.5" Click="newnext_Click"/>
-        <TextBlock x:Name="accountscreated" HorizontalAlignment="Left" Margin="20.289,169.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="205.711" FontSize="14" Height="47"><Run Text="Accounts that you have created:"/><LineBreak/><Run/></TextBlock>
-        <TextBlock x:Name="statustext" HorizontalAlignment="Left" Margin="20.289,169.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFDE651F" Width="705.544" FontSize="14" Height="47" Text="statustext" Visibility="Hidden"/>
-        <WindowsFormsHost x:Name="newusernameinput" HorizontalAlignment="Left" Height="29" Margin="20.289,140.5,0,0" VerticalAlignment="Top" Width="211.711">
+        <TextBlock x:Name="accountscreated" HorizontalAlignment="Left" Margin="20.289,169.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="White" Width="371" FontSize="14" Height="410.45"><Run Text="Accounts that you have created:"/><LineBreak/><Run/></TextBlock>
+        <TextBlock x:Name="statustext" HorizontalAlignment="Left" Margin="391.289,137.773,-296.833,0" TextWrapping="Wrap" VerticalAlignment="Top" Foreground="#FFF80000" Width="705.544" FontSize="16" Height="47" Text="statustext" Visibility="Hidden" FontWeight="Bold"/>
+        <WindowsFormsHost x:Name="newusernameinput" HorizontalAlignment="Left" Height="26" Margin="20.289,140.5,0,0" VerticalAlignment="Top" Width="205.711">
             <Forms:TextBox x:Name="usernametext" Dock="None"/>
         </WindowsFormsHost>
     </Grid>

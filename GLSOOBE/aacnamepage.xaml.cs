@@ -37,19 +37,25 @@ namespace GLSOOBE
             '"', '/', '\\', '[', ']', ':', '|', '<', '>', '+', 
             '=', ';', ',', '?', '*', '%' };
 
+        private int usernamecount = 0;
+
         private void createaccount_Click(object sender, RoutedEventArgs e)
         {
             if(string.IsNullOrEmpty(usernametext.Text.ToString()))
             {
-                accountscreated.Visibility = Visibility.Hidden;
-                statustext.Text = "Account name cannot be empty or consist of spaces";
+                statustext.Text = "Failed to add the Account name";
                 statustext.Visibility = Visibility.Visible;
                 return;
             }
-            if (usernametext.Text.IndexOfAny(illegalcharacters) >= 0)
+            if(usernametext.Text.IndexOfAny(illegalcharacters) >= 0)
             {
-                accountscreated.Visibility = Visibility.Hidden;
-                statustext.Text = "Account name cannot consist of spaces or the following characters:\n { | } ~ [ \\ ] ^ : ; < = > ? @ ! \" % ` ( ) + / . , * & / ;";
+                statustext.Text = "Failed to add the Account name";
+                statustext.Visibility = Visibility.Visible;
+                return;
+            }
+            if(usernamecount == 8)
+            {
+                statustext.Text = "You can only add 8 Account names";
                 statustext.Visibility = Visibility.Visible;
                 return;
             }
@@ -66,8 +72,9 @@ namespace GLSOOBE
             addadmin.CreateNoWindow = true;
             Process.Start(addadmin);
             statustext.Visibility = Visibility.Hidden;
-            accountscreated.Visibility = Visibility.Visible;
-            accountscreated.Text = accountscreated.Text + "\n" + usernametext.Text; //Programming warcrimes 101
+            //accountscreated.Text = accountscreated.Text + "\n" + usernametext.Text; //Programming warcrimes 101
+            accountscreated.Text += Environment.NewLine + usernametext.Text;
+            usernamecount++;
         }
 
         private void newnext_Click(object sender, RoutedEventArgs e)

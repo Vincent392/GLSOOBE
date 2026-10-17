@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("slate.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("virtualbox_windows%20longhorn%20pre-reset_17_10_2026_15_45_10.png")]
 
 
